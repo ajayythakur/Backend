@@ -3,7 +3,9 @@ const app= express();
 const env = require('dotenv');
 const connect = require('./config/db');
 const route = require('./routes/authRoute');
+// const braintree=require('./routes/paymentRoute');
 const cors = require('cors');
+const course = require("./API's/Routes for API's/CourseApiRoute");
 
 //configure dot env 
 env.config();
@@ -14,6 +16,8 @@ app.use(express.json());
 
 //Route
 app.use(route);
+// app.use(braintree);
+app.use('/',course);
 
 //rest API
 app.get('/',(req,res)=>{
