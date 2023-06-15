@@ -6,6 +6,7 @@ const route = require('./routes/authRoute');
 // const braintree=require('./routes/paymentRoute');
 const cors = require('cors');
 const course = require("./API's/Routes for API's/CourseApiRoute");
+const aluminiStory = require("./API's/Routes for API's/AluminiStoryRoute");
 
 //configure dot env 
 env.config();
@@ -16,8 +17,9 @@ app.use(express.json());
 
 //Route
 app.use(route);
-// app.use(braintree);
+// app.use(braintree); 
 app.use('/',course);
+app.use('/',aluminiStory);
 
 //rest API
 app.get('/',(req,res)=>{
