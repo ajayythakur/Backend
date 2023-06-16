@@ -9,9 +9,29 @@ const Schema=new mongoose.Schema({
         type:String,
         unqiue:true,
         required:true
+    }, 
+    address_one:{
+        type:String,
+        required:true
+    },
+    address_two:{
+        type:String,
+        required:true
+    },
+    state:{
+        type:String,
+        required:true
+    },
+    city:{
+        type:String,
+        required:true
+    },
+    pincode:{
+        type:Number,
+        required:true
     },
     phone:{
-        type:String,
+        type:Number,
         required:true,
     },
     gradYear:{
@@ -22,14 +42,22 @@ const Schema=new mongoose.Schema({
         type:String,
         required:true,
     },
+    degree:{
+        type:String,
+        required:true
+    },
     country:{
         type:String,
         required:true,     
     },
-    date:{
+    goal:{
         type:String,
-        required:true,
-    }
+        required:true
+    },
+    target_company:{
+        type:String,
+        required:true
+    },
 },{timestamps:true})
 
 const detailSchema = mongoose.model("userClassroomInfo",Schema);
